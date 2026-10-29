@@ -14,13 +14,17 @@ var main_page_top = `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>haufenet.com</title>
+    <title>Dauguls | Start</title>
 	<link rel="stylesheet" href="/style.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
     <content>
         <header>
-            <p style="font-weight: bolder;" onclick="window.location.href='/'">haufenet.com</p>
+            <p style="font-weight: bolder;" onclick="window.location.href='/'">Dauguls</p>
             <p style="font-weight: 500;" onclick="window.location.href='/projects'">Projects</p>
             <p style="font-weight: 500;" onclick="window.location.href='/articles'">Articles</p>
             <p style="font-weight: 500;" onclick="window.location.href='/about'">About</p>
@@ -56,7 +60,7 @@ var main_page_bottom = `
 
 
         <footer>
-            <a href='/imprint_privacy'>Imprint and Privacy</a><p>&copy; haufenet.com</p>
+            <a href='/imprint_privacy'>Imprint and Privacy</a><p>&copy; dauguls.de</p>
         </footer>
 
     </content>
@@ -68,14 +72,18 @@ var article_project_page_top = `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>haufenet.com</title>
+    <title>Dauguls</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
     <content>
         <header>
-            <p style="font-weight: bolder;" onclick="window.location.href='/'">haufenet.com</p>
+            <p style="font-weight: bolder;" onclick="window.location.href='/'">Dauguls</p>
             <p style="font-weight: 500;" onclick="window.location.href='/projects'">Projects</p>
             <p style="font-weight: 500;" onclick="window.location.href='/articles'">Articles</p>
             <p style="font-weight: 500;" onclick="window.location.href='/about'">About</p>
@@ -85,7 +93,7 @@ var article_project_page_top = `<!DOCTYPE html>
 `
 var article_project_page_bottom = ` </writing></writing-content>  <footer>
             <a href='/imprint_privacy'>Imprint and Privacy</a>
-            <p>&copy; haufenet.com</p>
+            <p>&copy; dauguls.de</p>
         </footer>
 
     </content>
