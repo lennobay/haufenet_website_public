@@ -104,7 +104,7 @@ func main() {
 	CreateProjectMainPage()
 	readFileOthers("imprint_privacy.md")
 	readFileOthers("about.md")
-	fileserver := http.FileServer(http.Dir("./website"))
+	fileserver := http.FileServer(http.Dir("./httpdocs"))
 
 	http.Handle("/", fileserver)
 
@@ -114,8 +114,8 @@ func main() {
 
 }
 func CreateProjectPages() {
-	err := os.Mkdir("./website/", 0755)
-	err = os.Mkdir("./website/projects", 0755)
+	err := os.Mkdir("./httpdocs/", 0755)
+	err = os.Mkdir("./httpdocs/projects", 0755)
 	entries, err := os.ReadDir("./projects")
 	if err != nil {
 		log.Fatal(err)
@@ -125,8 +125,8 @@ func CreateProjectPages() {
 	}
 }
 func CreateArticlePages() {
-	err := os.Mkdir("./website/", 0755)
-	err = os.Mkdir("./website/articles", 0755)
+	err := os.Mkdir("./httpdocs/", 0755)
+	err = os.Mkdir("./httpdocs/articles", 0755)
 	entries, err := os.ReadDir("./articles")
 	if err != nil {
 		log.Fatal(err)
@@ -136,7 +136,7 @@ func CreateArticlePages() {
 	}
 }
 func CreateArticleMainPage() {
-	err := os.Mkdir("./website/articles", 0755)
+	err := os.Mkdir("./httpdocs/articles", 0755)
 	entries, err := os.ReadDir("./articles")
 	if err != nil {
 		log.Fatal(err)
@@ -144,14 +144,14 @@ func CreateArticleMainPage() {
 	for _, e := range entries {
 		analayzeFiles("./articles/", e.Name(), "ArticleMainPage")
 	}
-	err = os.WriteFile("./website/articles/index.html", []byte(article_project_page_top+"<h1>Articles</h1>"+data_articles_index+article_project_page_bottom), 0755)
+	err = os.WriteFile("./httpdocs/articles/index.html", []byte(article_project_page_top+"<h1>Articles</h1>"+data_articles_index+article_project_page_bottom), 0755)
 	if err != nil {
 		panic(err)
 	}
 
 }
 func CreateProjectMainPage() {
-	err := os.Mkdir("./website/projects", 0755)
+	err := os.Mkdir("./httpdocs/projects", 0755)
 	entries, err := os.ReadDir("./projects")
 	if err != nil {
 		log.Fatal(err)
@@ -159,14 +159,14 @@ func CreateProjectMainPage() {
 	for _, e := range entries {
 		analayzeFiles("./projects/", e.Name(), "ProjectMainPage")
 	}
-	err = os.WriteFile("./website/projects/index.html", []byte(article_project_page_top+"<h1>My Projects</h1>"+data_projects_index+article_project_page_bottom), 0755)
+	err = os.WriteFile("./httpdocs/projects/index.html", []byte(article_project_page_top+"<h1>My Projects</h1>"+data_projects_index+article_project_page_bottom), 0755)
 	if err != nil {
 		panic(err)
 	}
 
 }
 func CreateMainPage() {
-	err := os.Mkdir("./website/", 0755)
+	err := os.Mkdir("./httpdocs/", 0755)
 	entries, err := os.ReadDir("./articles")
 	if err != nil {
 		log.Fatal(err)
@@ -181,7 +181,7 @@ func CreateMainPage() {
 	for _, e := range entries2 {
 		analayzeFiles("./projects/", e.Name(), "MainPageProjects")
 	}
-	err = os.WriteFile("./website/index.html", []byte(main_page_top+main_page_projects_element+main_page_middle+main_page_articles_element+main_page_bottom), 0755)
+	err = os.WriteFile("./httpdocs/index.html", []byte(main_page_top+main_page_projects_element+main_page_middle+main_page_articles_element+main_page_bottom), 0755)
 	if err != nil {
 		panic(err)
 	}
@@ -278,15 +278,15 @@ func page_Collection_Overview_Projects(filename string, title string, descriptio
 	data_projects_index += "<a class='special-project' href='/projects/" + filename + "/index.html'>" + title + description + "</a>"
 }
 func page_Project(filename string, text string) {
-	err := os.Mkdir("./website/projects/"+filename, 0755)
-	err = os.WriteFile("./website/projects/"+filename+"/index.html", []byte(article_project_page_top+"<article-details>"+text+"</article-details>"+article_project_page_bottom), 0755)
+	err := os.Mkdir("./httpdocs/projects/"+filename, 0755)
+	err = os.WriteFile("./httpdocs/projects/"+filename+"/index.html", []byte(article_project_page_top+"<article-details>"+text+"</article-details>"+article_project_page_bottom), 0755)
 	if err != nil {
 		panic(err)
 	}
 }
 func page_Article(filename string, text string) {
-	err := os.Mkdir("./website/articles/"+filename, 0755)
-	err = os.WriteFile("./website/articles/"+filename+"/index.html", []byte(article_project_page_top+"<article-details>"+text+"</article-details>"+article_project_page_bottom), 0755)
+	err := os.Mkdir("./httpdocs/articles/"+filename, 0755)
+	err = os.WriteFile("./httpdocs/articles/"+filename+"/index.html", []byte(article_project_page_top+"<article-details>"+text+"</article-details>"+article_project_page_bottom), 0755)
 	if err != nil {
 		panic(err)
 	}
@@ -323,8 +323,8 @@ func readFileOthers(filename string) {
 
 	}
 	filename_new := strings.Split(filename, ".md")
-	err = os.Mkdir("./website/"+filename_new[0], 0755)
-	err = os.WriteFile("./website/"+filename_new[0]+"/index.html", []byte(article_project_page_top+new_text+article_project_page_bottom), 0755)
+	err = os.Mkdir("./httpdocs/"+filename_new[0], 0755)
+	err = os.WriteFile("./httpdocs/"+filename_new[0]+"/index.html", []byte(article_project_page_top+new_text+article_project_page_bottom), 0755)
 	if err != nil {
 		panic(err)
 	}
