@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>haufenet.com</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <content>
+        <header>
+            <p style="font-weight: bolder;" onclick="window.location.href='/'">haufenet.com</p>
+            <p style="font-weight: 500;" onclick="window.location.href='/projects'">Projects</p>
+            <p style="font-weight: 500;" onclick="window.location.href='/articles'">Articles</p>
+            <p style="font-weight: 500;" onclick="window.location.href='/about'">About</p>
+        </header>
+
+
+        <hero>
+            <h1>Hi there!</h1>
+            <p>I am an amature programmer and student in high school.</p>
+            <button onclick="window.location.href='/#projects'">Look at my Projects</button>
+        </hero>
+
+        <projects id="projects">
+            <projects-left>
+                <h1>My Projects</h1>
+                <p>Creating projects just for fun when ever I need or want something</p>
+                <button onclick="window.location.href='/projects'">More Projects</button>
+            </projects-left>
+            <projects-right>
+                <a href="/projects/musicwish.html">
+                    <h3>Musicwish</h3>
+                    <p>Software for musicwishing at events</p>
+                    <i>In Progress</i>
+                </a>
+                <a>
+                    <h3>This Website</h3>
+                    <p>The Background works of this Website</p>
+                    <i>Continues Development</i>
+                </a>
+                <button onclick="window.location.href='/projects'">More Projects</button>
+            </projects-right>
+        </projects>
+        <articles>
+            <articles-left>
+                <h1>My Articles</h1>
+                <p>Writing about expieriences and missing guides on the Internet</p>
+            </articles-left>
+            <articles-right>
+                <a href="/articles/switch-to-mikrotik.html">
+                    <h3>Switching to Mikrotik</h3> |
+                    <p>A compranhansive guide when switching from Opnsense to Mikrotik</p>
+                </a>
+
+                <a>
+                    <h3>Get an IPv4</h3> |
+                    <p>How to escape DSLite when using Vodafone</p>
+                </a>
+                <button onclick="window.location.href='/articles'">Other Articles</button>
+            </articles-right>
+        </articles>
+
+
+        <footer>
+            <a>Imprint and Privacy</a>
+            <p>Running on Alpine Linux</p>
+        </footer>
+
+    </content>
+</body>
+
+</html>
+<style>
+    :root {
+        --header-footer-color: black;
+        --font-size-h1: 2.5rem;
+        --font-size-h3: 1.5rem;
+        --projects-background-main-page: #ffbe0b;
+        --projects-highlight: #cb9d1d;
+        --color-projects-highlight: hsl(0 0% 90%);
+        --color-articles: black;
+    }
+
+    h1 {
+        font-size: var(--font-size-h1);
+    }
+
+    h3 {
+        font-size: var(--font-size-h3);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    articles {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    articles button {
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: black;
+        border: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    articles-right {
+        display: grid;
+        grid-template-columns: 1fr;
+
+
+    }
+
+    articles-right a {
+        border-bottom: solid black 1px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        color: var(--color-articles);
+    }
+
+    articles-right a:hover {
+        background-color: black;
+        color: white;
+    }
+
+
+    projects {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: var(--projects-background-main-page);
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    projects-right {
+        display: grid;
+        justify-content: center;
+        grid-template-rows: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    projects-right button {
+        display: none;
+    }
+
+    projects-left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    projects-left button {
+        padding: 1rem;
+        background-color: black;
+        border: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    projects-right a {
+        background-color: var(--projects-highlight);
+        box-shadow: 5px 5px 0px 1px #000000;
+        color: var(--color-projects-highlight);
+        padding: 1rem;
+
+    }
+
+    projects-right a:hover {
+        background-color: black;
+        box-shadow: none;
+    }
+
+    hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    hero h1 {
+        font-size: 5rem;
+    }
+
+    hero p {
+        font-size: 3rem;
+    }
+
+    hero button {
+        padding: 1rem;
+        background-color: black;
+        border: none;
+        color: white;
+        font-weight: bold;
+        font-size: 2rem;
+
+    }
+
+    body {
+        margin: 0;
+        left: 0;
+        font-family: sans-serif;
+    }
+
+    header {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
+        background-color: var(--header-footer-color);
+    }
+
+    header p {
+        font-weight: bolder;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--header-footer-color);
+        color: white;
+        padding: 1rem;
+        gap: 2rem;
+    }
+
+    footer a {
+        color: white;
+        text-decoration: none;
+
+
+    }
+
+    @media (width <=900px) {
+        hero {
+            height: 100vh;
+            padding: 1rem;
+        }
+
+        projects-right button {
+            padding: 1rem;
+            background-color: black;
+            border: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: unset;
+        }
+
+        projects-left button {
+            display: none;
+        }
+
+        projects {
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        articles {
+            padding: 1rem;
+        }
+    }
+</style>
